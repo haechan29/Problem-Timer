@@ -2,7 +2,7 @@
 
 참조
 
-> [_위시켓 <‘어플리케이션 제작’ 과정, A부터 Z까지 한 눈에 살펴보기>_] (http://blog.wishket.com/%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%A0%9C%EC%9E%91-%EA%B3%BC%EC%A0%95-a%EB%B6%80%ED%84%B0-z%EA%B9%8C%EC%A7%80-%ED%95%9C-%EB%88%88%EC%97%90-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/)
+> [_위시켓 <‘어플리케이션 제작’ 과정, A부터 Z까지 한 눈에 살펴보기>_](http://blog.wishket.com/%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%A0%9C%EC%9E%91-%EA%B3%BC%EC%A0%95-a%EB%B6%80%ED%84%B0-z%EA%B9%8C%EC%A7%80-%ED%95%9C-%EB%88%88%EC%97%90-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/)
 
 ## STEP 1. POC 구축
 
