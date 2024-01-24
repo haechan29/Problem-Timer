@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
+    android:background="@drawable/shape_border_bottom_gray">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/text_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중학교 3학년"
+            android:textColor="@color/disabled"
+            android:textSize="13sp"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/text_student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="임해찬"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_registered_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022-11-28 가입"
+        android:textColor="@color/disabled"
+        android:textSize="13sp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

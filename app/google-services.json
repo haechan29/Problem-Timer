@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209098461705",
+    "project_id": "problemtimer",
+    "storage_bucket": "problemtimer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209098461705:android:cb819b722b8f9aeadaded8",
+        "android_client_info": {
+          "package_name": "kr.co.problemtimertest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209098461705-555he5sp7jfsrk3cl4s010itgud52pi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE_eeER94ZzKXAt2tkd8kkb4Ud_Drf3TA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209098461705-555he5sp7jfsrk3cl4s010itgud52pi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

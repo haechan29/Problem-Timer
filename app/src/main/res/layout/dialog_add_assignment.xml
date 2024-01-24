@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:minWidth="400dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 반 탭 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/container_title_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_title_class"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_title_class"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="반"
+                        android:textSize="15sp"
+                        android:textColor="@color/selector_text"
+                        android:background="@drawable/selector_radio"
+                        android:button="@android:color/transparent"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:layout_margin="5dp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_title_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="학년"
+                        android:textSize="15sp"
+                        android:textColor="@color/selector_text"
+                        android:background="@drawable/selector_radio"
+                        android:button="@android:color/transparent"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:layout_margin="5dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/container_title_class"
+                app:layout_constraintLeft_toLeftOf="@id/container_title_class">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_content_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--
+                    <RadioButton
+                        android:text="예시 버튼"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/selector_text"
+                        android:background="@drawable/selector_radio"
+                        android:button="@android:color/transparent"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:layout_margin="5dp"/>
+                        -->
+                </RadioGroup>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 학생 탭 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/container_title_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_title_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="학생"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/container_title_student"
+                app:layout_constraintLeft_toLeftOf="@id/container_title_student">
+
+                <LinearLayout
+                    android:id="@+id/container_content_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--
+                    <CheckBox
+                        android:text="예시 학생"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/selector_text"
+                        android:background="@drawable/selector_radio"
+                        android:button="@android:color/transparent"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:layout_margin="5dp"/>
+
+                    <CheckBox
+                        android:text="예시 학생2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/selector_text"
+                        android:background="@drawable/selector_radio"
+                        android:button="@android:color/transparent"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:layout_margin="5dp"/>
+                        -->
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 교재 탭 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/container_title_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_title_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="교재"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/check_type_myself"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:padding="5dp"
+                    android:text="직접 입력하기"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/container_title_book"
+                app:layout_constraintLeft_toLeftOf="@id/container_title_book">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_content_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--
+                        <RadioButton
+                            android:text="예시 교재"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textColor="@drawable/selector_text"
+                            android:background="@drawable/selector_radio"
+                            android:button="@android:color/transparent"
+                            android:elevation="5dp"
+                            android:padding="5dp"
+                            android:layout_margin="5dp"/>
+                            -->
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/edit_type_myself"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:theme="@style/editText"
+                        android:hint="교재 이름을 입력해주세요"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="13dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 범위 탭 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/container_title_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_title_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="범위"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/container_title_range"
+                app:layout_constraintLeft_toLeftOf="@id/container_title_range"
+                android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/edit_content_range_from"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:inputType="number"
+                    android:hint=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/selector_edit_text_rectangle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edit_content_range_to"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:inputType="number"
+                    android:hint=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/selector_edit_text_rectangle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="페이지"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 기한 탭 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_due_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/container_title_due_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_title_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="기한"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/container_title_due_date"
+                app:layout_constraintLeft_toLeftOf="@id/container_title_due_date">
+
+                <!-- 날짜 텍스트 영역 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_content_due_date_week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="-2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text=""
+                        android:textColor="#77000000"
+                        android:textSize="12sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/text_content_due_date"
+                            android:layout_width="wrap_content"
+                            android:minWidth="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:background="@drawable/shape_border_bottom_black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="-7dp"
+                            android:paddingLeft="8dp"
+                            android:text="〉"
+                            android:textColor="#77000000"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <DatePicker
+                    android:id="@+id/date_picker_content_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:datePickerMode="spinner"
+                    android:calendarViewShown="false"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginBottom="-15dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:gravity="right|center_vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5sp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/container_cancel"
+                    android:layout_width="90dp"
+                    android:layout_height="45dp"
+                    android:background="@color/soft_warning"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:text="취소"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5sp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/container_add"
+                    android:layout_width="90dp"
+                    android:layout_height="45dp"
+                    android:background="@color/soft_disabled"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:text="추가"
+                        android:textColor="@color/disabled"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>>
+
+        <!-- 과제의 id를 저장하는 뷰 -->
+        <View
+            android:id="@+id/view_assignment_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </LinearLayout>
+</ScrollView>

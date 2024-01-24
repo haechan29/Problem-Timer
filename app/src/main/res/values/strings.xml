@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">ProblemTimerTest</string>
+
+    <string-array name="align_student_assignment_by">
+        <item>기한</item>
+        <item>학원</item>
+        <item>출제일</item>
+    </string-array>
+
+    <string-array name="align_teacher_assignment_by">
+        <item>수업</item>
+        <item>학년</item>
+        <item>기한</item>
+        <item>출제일</item>
+    </string-array>
+
+    <string-array name="align_student_by">
+        <item>수업</item>
+        <item>학년</item>
+    </string-array>
+
+    <string-array name="region">
+        <item>강원</item>
+        <item>경기</item>
+        <item>경남</item>
+        <item>경북</item>
+        <item>광주</item>
+        <item>대구</item>
+        <item>대전</item>
+        <item>부산</item>
+        <item>서울</item>
+        <item>세종</item>
+        <item>울산</item>
+        <item>인천</item>
+        <item>전남</item>
+        <item>전북</item>
+        <item>제주</item>
+        <item>충남</item>
+        <item>충북</item>
+    </string-array>
+
+    <string-array name="grade_short">
+        <item>1학년</item>
+        <item>2학년</item>
+        <item>3학년</item>
+    </string-array>
+
+    <string-array name="grade_long">
+        <item>1학년</item>
+        <item>2학년</item>
+        <item>3학년</item>
+        <item>4학년</item>
+        <item>5학년</item>
+        <item>6학년</item>
+    </string-array>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="already_registered">이미 회원가입된 아이디입니다.</string>
+</resources>

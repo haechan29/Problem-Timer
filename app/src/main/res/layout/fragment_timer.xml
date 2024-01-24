@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- 교재 영역 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/shape_border_bottom_gray"
+        android:elevation="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/container_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/text_add_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_btn_gray"
+                        android:text="교재 추가"
+                        android:textColor="@color/black"
+                        android:padding="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_book"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                style="?android:attr/progressBarStyleSmall"
+                android:indeterminateTint="#FFCCCCCC"
+                android:background="@color/transparent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:indeterminate="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:visibility="visible" />
+        </FrameLayout>
+    </HorizontalScrollView>
+
+    <!-- 상단바 + 문제 영역 -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 상단바 영역 -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:background="@drawable/shape_border_bottom_gray">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginBottom="2dp"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                    <TextView
+                        android:id="@+id/text_to_prev_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="〈"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="-3dp"
+                        android:paddingRight="17dp"
+                        android:layout_marginRight="5dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/edit_book_page"/>
+
+                    <EditText
+                        android:id="@+id/edit_book_page"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:inputType="number"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginLeft="45dp"
+                        android:focusableInTouchMode="false"
+                        android:cursorVisible="false"
+                        android:imeOptions="actionDone"
+                        android:gravity="center"
+                        android:background="@drawable/selector_edit_text_rectangle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="페이지"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/edit_book_page"/>
+
+                    <TextView
+                        android:id="@+id/text_to_next_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="〉"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="-3dp"
+                        android:layout_marginLeft="57dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/edit_book_page"/>
+
+                    <!-- 채점 모드 스위치 영역 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/container_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_grade_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:thumb="@drawable/shape_switch_thumb"
+                            android:layout_marginRight="40dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:switchMinWidth="50dp"
+                            app:track="@drawable/selector_switch" />
+
+                        <TextView
+                            android:id="@+id/text_grade_mode_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="채점\n완료"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/switch_grade_mode"
+                            app:layout_constraintRight_toLeftOf="@+id/switch_grade_mode"
+                            app:layout_constraintTop_toTopOf="@+id/switch_grade_mode" />
+
+                        <TextView
+                            android:id="@+id/text_grade_mode_on"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:text="채점\n하기"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/switch_grade_mode"
+                            app:layout_constraintLeft_toRightOf="@+id/switch_grade_mode"
+                            app:layout_constraintTop_toTopOf="@+id/switch_grade_mode" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- 문제 영역 -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_problem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/basic">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="basic">#FFFCFCFC</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#FFCCCCCC</color>
+
+    <color name="soft_disabled">#FFEAEAEA</color>
+    <color name="soft_warning">#FFFFDCE1</color>
+    <color name="soft_activated">#FFE1F6FA</color>
+    <color name="soft_blue">#FFB9E2FA</color>
+
+    <color name="activated">#FF0078FF</color>
+    <color name="warning">#FFFF6666</color>
+    <color name="disabled">#FF888888</color>
+
+    <color name="right">#FFCDECFA</color>
+    <color name="wrong">#FFFFE1E6</color>
+    <color name="question">#FFFAFABE</color>
+    <color name="normal">#FFFFFFFF</color>
+
+    <color name="magnitude0">#999999</color>
+    <color name="magnitude1">#4A7BA7</color>
+    <color name="magnitude2">#04B4B3</color>
+    <color name="magnitude3">#10CAC9</color>
+    <color name="magnitude4">#F5A623</color>
+    <color name="magnitude5">#FF7D50</color>
+    <color name="magnitude6">#FC6644</color>
+    <color name="magnitude7">#E75F40</color>
+    <color name="magnitude8">#E13A20</color>
+    <color name="magnitude9">#D93218</color>
+    <color name="magnitude10plus">#C03823</color>
+</resources>

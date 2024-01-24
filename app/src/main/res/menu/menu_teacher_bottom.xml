@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab_management"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/statistics"
+        android:title="학생 관리하기" />
+
+    <item
+        android:id="@+id/tab_assignment_teacher"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/pencil"
+        android:title="과제 보기" />
+</menu>

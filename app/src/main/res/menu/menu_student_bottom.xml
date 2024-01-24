@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab_problem"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/stopwatch"
+        android:title="문제 풀기" />
+
+    <item
+        android:id="@+id/tab_assignment_student"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/pencil"
+        android:title="과제하기" />
+
+    <item
+        android:id="@+id/tab_statistics"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/statistics"
+        android:title="내 정보" />
+</menu>

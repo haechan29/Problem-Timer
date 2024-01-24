@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5sp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 학생별 교재 영역 -->
+            <LinearLayout
+                android:id="@+id/container_book_by_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/normal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical">
+
+                <!-- 학생 영역 -->
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/text_student_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#99000000"
+                        android:textSize="12dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_student_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="임해찬"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <!-- 교재 영역 -->
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_book"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/text_add_book"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:elevation="5dp"
+                            android:layout_margin="5dp"
+                            android:drawableLeft="@drawable/resized_add"/>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- 스위치 영역 + 문제 기록 영역 -->
+            <LinearLayout
+                android:id="@+id/container_problem_statistics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <!-- 문제 기록 보기 방식을 조절하는 스위치 영역 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@drawable/shape_border_top_bottom_gray">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_how_to_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:thumb="@drawable/shape_switch_thumb"
+                        android:layout_marginRight="35dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:switchMinWidth="50dp"
+                        app:track="@drawable/selector_switch" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="점수\n보기"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/switch_how_to_view"
+                        app:layout_constraintRight_toLeftOf="@+id/switch_how_to_view"
+                        app:layout_constraintTop_toTopOf="@+id/switch_how_to_view" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="등급\n보기"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/switch_how_to_view"
+                        app:layout_constraintLeft_toRightOf="@+id/switch_how_to_view"
+                        app:layout_constraintTop_toTopOf="@+id/switch_how_to_view" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 점수 보기 상태일 때 단원별 문제 기록이 보여지는 영역 -->
+                <LinearLayout
+                    android:id="@+id/container_by_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--
+                    마지막 그리드 레이아웃은 paddingBottom을 2dp로 설정한다
+                    <GridLayout
+                        android:rowCount="4"
+                        android:columnCount="4"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        style="@style/ProblemRecordByUnit">
+
+                        <TextView
+                            android:layout_rowSpan="4"
+                            android:text="1단원"
+                            style="@style/ProblemRecordUnit1" />
+
+                        <TextView
+                            android:text="01 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            android:text="02 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            android:text="03 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            android:text="04 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            style="@style/ProblemRecordRank"
+                            android:text="등급" />
+
+                        <TextView
+                            style="@style/ProblemRecordRank"
+                            android:text="등급" />
+
+                        <TextView
+                            style="@style/ProblemRecordRank"
+                            android:text="등급"/>
+
+                        <TextView
+                            style="@style/ProblemRecordRank"
+                            android:text="등급"/>
+
+                        <TextView
+                            style="@style/ProblemRecordPercentage"
+                            android:text="퍼센트" />
+
+                        <TextView
+                            style="@style/ProblemRecordPercentage"
+                            android:text="퍼센트"/>
+
+                        <TextView
+                            style="@style/ProblemRecordPercentage"
+                            android:text="퍼센트"/>
+
+                        <TextView
+                            style="@style/ProblemRecordPercentage"
+                            android:text="퍼센트"/>
+
+                        화살표 텍스트뷰
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowSpan="4"
+                            android:layout_rowWeight="1"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="3dp"
+                            android:gravity="center"
+                            android:text="〉"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:visibility="gone"/>
+                    </GridLayout>
+
+                    마지막 그리드 레이아웃은 paddingBottom을 2dp로 설정한다
+                    <GridLayout
+                        android:rowCount="3"
+                        android:columnCount="4"
+                        android:orientation="vertical"
+                        android:background="#11000000"
+                        android:paddingBottom="5dp"
+                        style="@style/ProblemRecordByUnit">
+
+                        <TextView
+                            android:layout_rowSpan="3"
+                            android:text="2단원"
+                            style="@style/ProblemRecordUnit1" />
+
+                        <TextView
+                            android:text="01 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            android:text="02 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            android:text="03 중단원"
+                            style="@style/ProblemRecordUnit2"/>
+
+                        <TextView
+                            style="@style/ProblemRecordScoreByUnit2"
+                            android:text="점수" />
+
+                        <TextView
+                            style="@style/ProblemRecordScoreByUnit2"
+                            android:text="점수" />
+
+                        <TextView
+                            style="@style/ProblemRecordScoreByUnit2"
+                            android:text="점수" />
+
+                        화살표 텍스트뷰
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_rowSpan="3"
+                            android:text="〉"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="3dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            style="@style/ProblemRecordRank"
+                            android:text="3등급"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:text="3등급"
+                            style="@style/ProblemRecordRank"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:text="-"
+                            style="@style/ProblemRecordRank"
+                            android:paddingRight="12dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:text="(15.9%)"
+                            style="@style/ProblemRecordPercentage"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:text="(23.2%)"
+                            style="@style/ProblemRecordPercentage"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:text="-"
+                            style="@style/ProblemRecordPercentage"
+                            android:paddingRight="15dp"
+                            android:visibility="gone"/>
+                    </GridLayout>
+                    -->
+                </LinearLayout>
+
+                <!-- 등급 보기 상태일 때 단원별 문제 기록이 보여지는 영역 -->
+                <LinearLayout
+                    android:id="@+id/container_by_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- 단원명과 백분율이 보여지는 영역 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/container_unit_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:id="@+id/arrow_left_unit_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="〈"
+                            android:textColor="#77000000"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="-7dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_unit_name_unit_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1. 지수함수와 로그함수"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            android:layout_marginLeft="3dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toRightOf="@id/arrow_left_unit_name"/>
+
+                        <TextView
+                            android:id="@+id/text_unit_name_unit_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="01 지수"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            app:layout_constraintTop_toBottomOf="@id/text_unit_name_unit_1"
+                            app:layout_constraintLeft_toLeftOf="@id/text_unit_name_unit_1"/>
+
+                        <LinearLayout
+                            android:id="@+id/container_unit_name_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="3dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/arrow_right_unit_name" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="상위 15.9%"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/arrow_right_unit_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="〉"
+                            android:textColor="#77000000"
+                            android:textSize="15sp"
+                            android:layout_marginRight="-7dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 문제별 기록이 보여지는 영역 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <!-- 정답률, 점수 글자가 보이는 영역 -->
+                        <LinearLayout
+                            android:id="@+id/container_by_problem_form"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp">
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_by_problem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

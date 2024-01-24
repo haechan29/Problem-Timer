@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="100"
+    android:fillAfter="true">
+    <!-- 애니메이션이 적용되지 않도록
+    fromYDelta, toYDelta를 같게 설정했다. -->
+    <translate
+        android:fromYDelta="0%p"
+        android:toYDelta="0%p"/>
+</set>

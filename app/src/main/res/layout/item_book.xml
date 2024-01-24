@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:id="@+id/text_book_name"
+        android:layout_width="wrap_content"
+        android:minWidth="40dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_btn_gray"
+        android:gravity="center"
+        android:text="교재 이름"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+</LinearLayout>
