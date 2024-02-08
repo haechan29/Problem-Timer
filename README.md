@@ -7,7 +7,4 @@
 
 ### 2️⃣ 내가 얼마나 빨리 풀었는지 통계로 알 수 있어요
 <img src="https://github.com/haechan29/Problem-Timer/assets/63138511/1f705187-a200-460b-a3f2-d01d68590339" width=30%>
-
-</br>
-출시 예정일은 2024년 4월 1일입니다.</br>
-문의 사항은 [문의하기](https://open.kakao.com/o/gAjmZA8f)로 부탁드려요
+</br></br>
